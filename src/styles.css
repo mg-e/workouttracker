@@ -1,0 +1,108 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f0e68c;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #8b0000;
+}
+
+.workout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.workout-form input,
+.workout-form button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #8b0000;
+  border-radius: 5px;
+}
+
+.workout-form button {
+  background-color: #8b0000;
+  color: white;
+  cursor: pointer;
+}
+
+.workout-list {
+  margin-top: 20px;
+}
+
+.workout-item {
+  background-color: #fff;
+  padding: 10px;
+  border: 2px solid #8b0000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workout-item button {
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.session-selector {
+  margin-bottom: 20px;
+}
+
+.session-selector input {
+  padding: 5px;
+  font-size: 1rem;
+  border: 2px solid #8b0000;
+  border-radius: 5px;
+}
+
+.set-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.set-inputs input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #8b0000;
+  border-radius: 5px;
+}
+
+.set-inputs button {
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .workout-form input,
+  .workout-form button {
+    font-size: 0.9rem;
+  }
+}
