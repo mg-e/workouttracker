@@ -1,20 +1,21 @@
 body {
-  font-family: "Courier New", Courier, monospace;
-  background-color: #f0e68c;
-  color: #333;
+  font-family: "Press Start 2P", cursive;
+  background-color: #0f0f0f;
+  color: #00ff00;
   margin: 0;
   padding: 20px;
 }
 
 .app {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
 h1 {
   font-size: 2.5rem;
-  color: #8b0000;
+  color: #ff00ff;
+  text-shadow: 2px 2px #00ff00;
 }
 
 .workout-form {
@@ -28,14 +29,64 @@ h1 {
 .workout-form button {
   padding: 10px;
   font-size: 1rem;
-  border: 2px solid #8b0000;
+  border: 2px solid #00ff00;
   border-radius: 5px;
+  background-color: #0f0f0f;
+  color: #00ff00;
+  font-family: "Press Start 2P", cursive;
+  width: 100%; /* Ensure all inputs have the same width */
+  box-sizing: border-box; /* Include padding and border in the width */
 }
 
 .workout-form button {
-  background-color: #8b0000;
-  color: white;
+  background-color: #ff00ff;
+  color: #0f0f0f;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.workout-form button:hover {
+  background-color: #00ff00;
+  color: #0f0f0f;
+}
+
+.set-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.set-inputs .set-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.set-inputs .set-row input {
+  flex: 1; /* Ensure inputs take up equal space */
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #00ff00;
+  border-radius: 5px;
+  background-color: #0f0f0f;
+  color: #00ff00;
+  font-family: "Press Start 2P", cursive;
+  box-sizing: border-box;
+}
+
+.set-inputs .set-row button {
+  background-color: #ff00ff;
+  color: #0f0f0f;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Press Start 2P", cursive;
+}
+
+.set-inputs .set-row button:hover {
+  background-color: #00ff00;
 }
 
 .workout-list {
@@ -43,23 +94,26 @@ h1 {
 }
 
 .workout-item {
-  background-color: #fff;
+  background-color: #1f1f1f;
   padding: 10px;
-  border: 2px solid #8b0000;
+  border: 2px solid #00ff00;
   border-radius: 5px;
   margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: left;
 }
 
 .workout-item button {
-  background-color: #8b0000;
-  color: white;
+  background-color: #ff00ff;
+  color: #0f0f0f;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  font-family: "Press Start 2P", cursive;
+}
+
+.workout-item button:hover {
+  background-color: #00ff00;
 }
 
 .session-selector {
@@ -69,31 +123,39 @@ h1 {
 .session-selector input {
   padding: 5px;
   font-size: 1rem;
-  border: 2px solid #8b0000;
+  border: 2px solid #00ff00;
   border-radius: 5px;
+  background-color: #0f0f0f;
+  color: #00ff00;
+  font-family: "Press Start 2P", cursive;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.set-inputs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+.session-selector {
+  margin-bottom: 20px;
 }
 
-.set-inputs input {
-  flex: 1;
-  padding: 10px;
+.session-selector label {
   font-size: 1rem;
-  border: 2px solid #8b0000;
-  border-radius: 5px;
+  color: #00ff00;
 }
 
-.set-inputs button {
-  background-color: #8b0000;
-  color: white;
-  border: none;
-  padding: 5px 10px;
+.session-selector .date-picker {
+  padding: 5px;
+  font-size: 1rem;
+  border: 2px solid #00ff00;
   border-radius: 5px;
-  cursor: pointer;
+  background-color: #0f0f0f;
+  color: #00ff00;
+  font-family: "Press Start 2P", cursive;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.session-selector .date-picker::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Make the calendar icon white */
 }
 
 @media (max-width: 600px) {
@@ -104,5 +166,18 @@ h1 {
   .workout-form input,
   .workout-form button {
     font-size: 0.9rem;
+  }
+
+  .set-inputs .set-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .set-inputs .set-row input {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .set-inputs .set-row button {
+    width: 100%; /* Full width on mobile */
   }
 }

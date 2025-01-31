@@ -9,6 +9,7 @@ function WorkoutSession({ selectedDate, setSelectedDate }) {
         id="date"
         value={selectedDate}
         onChange={(e) => setSelectedDate(e.target.value)}
+        className="date-picker"
       />
     </div>
   );

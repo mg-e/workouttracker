@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function WorkoutForm({ addWorkout }) {
   const [exercise, setExercise] = useState("");
-  const [sets, setSets] = useState([{ reps: "", weight: "" }]); // Array to store multiple sets
+  const [sets, setSets] = useState([{ reps: "", weight: "" }]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,7 +12,7 @@ function WorkoutForm({ addWorkout }) {
     }
     addWorkout(exercise, sets);
     setExercise("");
-    setSets([{ reps: "", weight: "" }]); // Reset sets after submission
+    setSets([{ reps: "", weight: "" }]);
   };
 
   const handleSetChange = (index, field, value) => {
@@ -41,25 +41,27 @@ function WorkoutForm({ addWorkout }) {
       />
       {sets.map((set, index) => (
         <div key={index} className="set-inputs">
-          <input
-            type="number"
-            placeholder="Reps"
-            value={set.reps}
-            onChange={(e) => handleSetChange(index, "reps", e.target.value)}
-            required
-          />
-          <input
-            type="number"
-            placeholder="Weight (kg)"
-            value={set.weight}
-            onChange={(e) => handleSetChange(index, "weight", e.target.value)}
-            required
-          />
-          {sets.length > 1 && (
-            <button type="button" onClick={() => removeSet(index)}>
-              Remove
-            </button>
-          )}
+          <div className="set-row">
+            <input
+              type="number"
+              placeholder="Reps"
+              value={set.reps}
+              onChange={(e) => handleSetChange(index, "reps", e.target.value)}
+              required
+            />
+            <input
+              type="number"
+              placeholder="Weight (kg)"
+              value={set.weight}
+              onChange={(e) => handleSetChange(index, "weight", e.target.value)}
+              required
+            />
+            {sets.length > 1 && (
+              <button type="button" onClick={() => removeSet(index)}>
+                Remove
+              </button>
+            )}
+          </div>
         </div>
       ))}
       <button type="button" onClick={addSet}>

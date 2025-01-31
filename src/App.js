@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import WorkoutForm from "./components/WorkoutForm";
 import WorkoutList from "./components/WorkoutList";
 import WorkoutSession from "./components/WorkoutSession";
+import WeightChart from "./components/WeightChart";
 import "./styles.css";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
       <WorkoutSession selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
       <WorkoutForm addWorkout={addWorkout} />
       <WorkoutList workouts={filteredWorkouts} deleteWorkout={deleteWorkout} />
+      <WeightChart workouts={workouts} />
     </div>
   );
 }
